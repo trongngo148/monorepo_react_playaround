@@ -36,8 +36,26 @@ Here's what will happen now:
 
 4.  **Publishing to npm:** This time, when the `changesets/action` runs, it won't find any changeset files. However, it will detect that the package versions in `package.json` do not exist in the npm registry. It will then execute the `publish` command (`pnpm run publish:packages`), publishing the new version of `@test-jonathan148/utils` to npm.
 
+#### **Step 4: Make the change in any file**
 
-Note: Please go to your repo's settings, click on the 'Actions' category on the left side that is under 'Code and automation', scroll down to 'Workflow permissions', select 'Read and write permissions', click 'Allow Github Actions to create and approve pull requests', and click 'Save.'
+Here's what will happen now:
+
+1.  **Update any file:**
+
+2. **Run command:**
+    ```bash
+    pnpm changesets
+    ```
+
+3. **Push to origin:**
+4. **Wait the pipeline**
+5. **Waiting for pipeline create PR and then approval the PR**
+6. **The version will automatically increase**
+
+
+Note: How to allow Github action to automatically create PR 
+
+Please go to your repo's settings, click on the 'Actions' category on the left side that is under 'Code and automation', scroll down to 'Workflow permissions', select 'Read and write permissions', click 'Allow Github Actions to create and approve pull requests', and click 'Save.'
 
 Without organization
  ```bash
