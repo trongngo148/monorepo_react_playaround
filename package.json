@@ -7,7 +7,7 @@
     "build": "pnpm turbo run build",
     "test": "pnpm turbo run test",
     "publish:packages": "pnpm publish -r",
-    "changeset:autogenerate": "node .changesets/changesets-autogenerate.mjs",
+    "changeset:autogenerate": "node .changeset/changesets-autogenerate.mjs",
     "release": "pnpm changeset version && pnpm changeset publish"
   },
   "keywords": [],
