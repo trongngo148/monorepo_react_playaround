@@ -9,3 +9,7 @@ export const addNumbers1 = (a, b) => {
 export const addNumbers2 = (a, b) => {
   return a + b;
 };
+
+export const addNumbers3 = (a, b) => {
+  return a + b;
+};

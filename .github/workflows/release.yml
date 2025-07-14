@@ -7,8 +7,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
-    name: 'Core-function'
+  release:
+    name: 'Build and Release'
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -25,6 +25,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
+          registry-url: 'https://registry.npmjs.org'
 
       - name: Enable Corepack
         run: npm install -g pnpm
@@ -60,44 +61,4 @@ jobs:
         run: |
           gh pr merge ${{ steps.changesets.outputs.pullRequestNumber }} --squash --delete-branch
         env:
-          GITHUB_TOKEN: ${{ secrets.TEST_PAT }}
-
-  publish:
-    needs: build
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      packages: write
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-
-      - name: Enable Corepack
-        run: npm install -g pnpm
-
-      - name: Install dependencies
-        run: pnpm install
-
-      - name: Pull latest changes
-        run: |
-          git pull origin main
-
-      - name: Publish to npm
-        id: changesets
-        uses: changesets/action@v1.4.1
-        with:
-          run: |
-            git checkout main
-            git pull origin main
-          commit: 'chore(release): version packages'
-          title: 'chore(release): version packages'
-          version: node .github/changeset-version.js
-          publish: npx changeset publish
-          createGithubReleases: false
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.TEST_PAT }}
