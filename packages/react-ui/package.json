@@ -11,7 +11,7 @@
   "license": "ISC",
   "packageManager": "pnpm@10.13.1",
   "dependencies": {
-    "@my-only-one-org/utils": "workspace:*",
-    "react": "^19.1.0"
+    "react": "^19.1.0",
+    "test-jonathan148-react-utils": "workspace:*"
   }
 }
