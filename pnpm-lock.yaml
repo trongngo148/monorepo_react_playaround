@@ -14,12 +14,12 @@ importers:
 
   packages/react-ui:
     dependencies:
+      '@my-only-one-org/utils':
+        specifier: workspace:*
+        version: link:../utils
       react:
         specifier: ^19.1.0
         version: 19.1.0
-      utils:
-        specifier: workspace:^
-        version: link:../utils
 
   packages/utils: {}
 

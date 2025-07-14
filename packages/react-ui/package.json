@@ -1,5 +1,5 @@
 {
-  "name": "react-ui",
+  "name": "@my-only-one-org/react-ui",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,10 +8,13 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "UNLICENSED",
+  "publishConfig": {
+    "access": "restricted"
+  },
   "packageManager": "pnpm@10.13.1",
   "dependencies": {
-    "react": "^19.1.0",
-    "utils": "workspace:^"
+    "@my-only-one-org/utils": "workspace:*",
+    "react": "^19.1.0"
   }
 }
