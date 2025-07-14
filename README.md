@@ -1,0 +1,1 @@
+Please go to your repo's settings, click on the 'Actions' category on the left side that is under 'Code and automation', scroll down to 'Workflow permissions', select 'Read and write permissions', click 'Allow Github Actions to create and approve pull requests', and click 'Save.'
