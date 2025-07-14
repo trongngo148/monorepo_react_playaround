@@ -5,13 +5,16 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "publish:packages": "pnpm publish -r"
+    "publish:packages": "pnpm publish -r",
+    "changeset:autogenerate": "node .changesets/changesets-autogenerate.mjs",
+    "release": "pnpm changeset version && pnpm changeset publish"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "packageManager": "pnpm@10.13.1",
   "devDependencies": {
+    "@changesets/changelog-github": "^0.5.0",
     "@changesets/cli": "^2.29.5"
   }
 }
