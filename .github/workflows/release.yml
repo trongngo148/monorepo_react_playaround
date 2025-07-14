@@ -53,14 +53,14 @@ jobs:
           publish: npx changeset publish
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.TEST_PAT }}
 
       - name: Auto-merge release PR
         if: steps.changesets.outputs.pullRequestNumber != ''
         run: |
           gh pr merge ${{ steps.changesets.outputs.pullRequestNumber }} --squash --delete-branch
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.TEST_PAT }}
 
   publish:
     needs: build
@@ -99,4 +99,4 @@ jobs:
           publish: npx changeset publish
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.TEST_PAT }}
