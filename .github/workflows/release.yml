@@ -36,5 +36,5 @@ jobs:
           # This command will run pnpm version and pnpm publish
           publish: pnpm run publish:packages
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.TEST_PAT }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
